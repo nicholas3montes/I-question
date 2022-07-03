@@ -12,7 +12,7 @@ describe 'CreateQuestionResponseCommandHandler', type: :request do
       saveResponse = CreateQuestionResponseCommandHandler.new.execute(response, question.id)
 
       # Expectations
-      expect(QuestionResponse.last.response).to eq(saveResponse)
+      expect(QuestionResponse.last.response).to eq(saveResponse.response)
 
     end
   end

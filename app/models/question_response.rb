@@ -1,3 +1,3 @@
 class QuestionResponse < ApplicationRecord
-  belongs_to :question_posts
+  has_one :question_posts
 end
