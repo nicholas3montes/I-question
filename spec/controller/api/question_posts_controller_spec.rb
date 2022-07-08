@@ -4,7 +4,7 @@ describe 'QuestionPostsController', type: :request do
   context 'create' do
     it 'create and save a question' do
       # Setup
-      question = { question: "Que horas posso rezar o angelus ?" }
+      question = { question: 'Que horas posso rezar o angelus ?' }
       
       # Execution
       post api_question_posts_path, params: question 
