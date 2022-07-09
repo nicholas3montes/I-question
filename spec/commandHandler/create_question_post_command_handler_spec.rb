@@ -8,7 +8,6 @@ describe 'CreateQuestionPostCommandHandler', type: :request do
 
       # Execution
       question = CreateQuestionPostCommandHandler.new.execute(currentQuestion)
-      binding.pry
 
       # Expectations
       expect(QuestionPost.last.question).to eq(currentQuestion)

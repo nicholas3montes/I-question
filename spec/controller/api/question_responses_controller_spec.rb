@@ -10,7 +10,6 @@ describe 'QuestionResponsesController', type: :request do
       # Execution
       post api_question_posts_path, params: question
       post api_question_responses_path, params: {response: response, question_posts_id: QuestionPost.last.id}
-      binding.pry
       
       # Expectations
       expect(QuestionPost.last.question).to include('posso')

@@ -13,7 +13,7 @@ describe 'CreateUserCommandHandler', type: :request do
       user = CreateUserCommandHandler.new.execute(nome, dataNascimento, email, sexo)
       
       # Expectations
-      expect(User.last.sexo).to eq(sexo)
+      expect(User.last.gender).to eq(sexo)
       expect(User.last.email).to include('@gmail')
 
     end
