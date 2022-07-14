@@ -1,6 +1,7 @@
 class Api::QuestionPostsController < Api::ApiController
   def create
-    question = CreateQuestionPostCommandHandler.new.execute(params[:question])
+    binding.pry
+    question = CreateQuestionPostCommandHandler.new.execute(question:params[:question])
     render status: 201, json: question
   end
 

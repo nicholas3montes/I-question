@@ -1,8 +1,7 @@
 class Api::UsersController < Api::ApiController
   def create
-    user = CreateUserCommandHandler.new.execute(params[:name], params[:birthdate],
-       params[:email], params[:gender], params[:street], params[:number], params[:city], params[:country])
-    binding.pry
+    user = CreateUserCommandHandler.new.execute(name:params[:name], birthdate:params[:birthdate],
+       email:params[:email], gender:params[:gender], street:params[:street], number:params[:number], city:params[:city], country:params[:country])
     render status: 201, json: user
   end
 

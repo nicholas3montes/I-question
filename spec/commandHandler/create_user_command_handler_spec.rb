@@ -14,7 +14,8 @@ describe 'CreateUserCommandHandler', type: :request do
       sexo = 'masculino'
 
       # Execution
-      user = CreateUserCommandHandler.new.execute(nome, dataNascimento, email, sexo, rua, numero, cidade, pais)
+      CreateUserCommandHandler.new.execute(name:nome, birthdate:dataNascimento, email:email, 
+        gender:sexo, street:rua, number:numero, city:cidade, country:pais)
       
       # Expectations
       expect(User.last.gender).to eq(sexo)
@@ -34,8 +35,8 @@ describe 'CreateUserCommandHandler', type: :request do
       sexo = 'masculino'
 
       # Execution
-      user = CreateUserCommandHandler.new.execute(nome, dataNascimento, email, sexo, rua, numero, cidade, pais)
-      binding.pry
+      CreateUserCommandHandler.new.execute(name:nome, birthdate:dataNascimento, email:email, gender:sexo, street:rua, number:numero, city:cidade, country:pais)
+      
       # Expectations
       expect(User.last.address_id).to eq(Address.last.id)
       expect(Address.last.city).to include('paulo')

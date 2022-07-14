@@ -6,7 +6,6 @@ describe 'UsersController', type: :request do
       # Setup      
       user = {name: 'nicholas', birthdate: 22/03/1998, email:'nicholasmontes0@gmail.com',
          gender:'masculino', street: 'Rua Adolfo pinheiro', number: 89, city: 'Belem', country: 'Brasil'}
-      binding.pry
       # Execution
       post api_users_path, params: user
 
