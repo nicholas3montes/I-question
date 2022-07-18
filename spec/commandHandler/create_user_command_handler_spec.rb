@@ -4,11 +4,11 @@ describe 'CreateUserCommandHandler', type: :request do
   context 'execute' do
     it 'creating and saving the user' do
       # Setup
-      rua = 'são joao'
+      rua = 'São rafael'
       numero = 9
       cidade = 'São paulo'
       pais = 'Brasil'
-      nome = 'nicholas' 
+      nome = 'Nicholas' 
       dataNascimento = 22/03/1998 
       email = 'nicholasmontes0@gmail.com' 
       sexo = 'masculino'
@@ -25,13 +25,13 @@ describe 'CreateUserCommandHandler', type: :request do
 
     it 'creating and saving the address for user' do
       # Setup
-      rua = 'são joao'
-      numero = 9
-      cidade = 'São paulo'
-      pais = 'Brasil'       
-      nome = 'nicholas' 
-      dataNascimento = 22/03/1998 
-      email = 'nicholasmontes0@gmail.com' 
+      rua = 'king'
+      numero = 14
+      cidade = 'Cleveland city'
+      pais = 'EUA'       
+      nome = 'Jackson' 
+      dataNascimento = 15/06/1959 
+      email = 'michaeljackson0@gmail.com' 
       sexo = 'masculino'
 
       # Execution
@@ -39,7 +39,7 @@ describe 'CreateUserCommandHandler', type: :request do
       
       # Expectations
       expect(User.last.address_id).to eq(Address.last.id)
-      expect(Address.last.city).to include('paulo')
+      expect(Address.last.city).to include('Cleveland')
       expect(Address.last.number).to eq(numero)
 
     end

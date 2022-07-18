@@ -1,7 +1,8 @@
 class CreateQuestionPostCommandHandler
 
   def execute(question:)
-    QuestionPost.new(question: question).save
+
+    CreateQuestionPostCommand.new(question:question)
     QuestionPost.last
   end
 end
