@@ -3,9 +3,10 @@ require 'rails_helper'
 describe 'UsersController', type: :request do
   context 'create' do
     it 'create and save user' do
-      # Setup      
+      # Setup    
       user = {name: 'nicholas', birthdate: 22/03/1998, email:'nicholasmontes0@gmail.com',
          gender:'masculino', street: 'Rua Adolfo pinheiro', number: 89, city: 'Belem', country: 'Brasil'}
+         
       # Execution
       post api_users_path, params: user
 

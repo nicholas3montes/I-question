@@ -4,8 +4,10 @@ describe 'CreateQuestionResponseCommandHandler', type: :request do
   context 'execute' do
     it 'create and save a response for question' do
       # Setup
+      CreateUserCommandHandler.new.execute(name: 'Roberto', birthdate: 15081890, email:'Robertinhozika@gmail.com',
+        gender:'Masculino', street: 'Clodomiro amazonas', number: 888, city: 'São paulo', country: 'Brasil')
       question = "Como fazer velas de cera de abelha ?"
-      questionPost = QuestionPost.new(question: question).save
+      questionPost = QuestionPost.new(question: question, user_id: User.last.id).save
       response = "Olhando o manual, seu burro !"
 
       # Execution

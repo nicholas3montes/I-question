@@ -4,7 +4,9 @@ describe 'CreateQuestionResponseCommand', type: :request do
   context 'execute' do
     it 'create and save a response' do
       #Setup
-      QuestionPost.new(question:'Como fazer um bolo rapido ?').save
+      CreateUserCommand.new(name:'guilherme', birthdate:22051998, email:'oioi@gmail.com', 
+        gender:'masculino', street:'travessa rio', number:07, city:'Paraiba', country:'Brasil')
+      QuestionPost.new(question:'Como fazer um bolo rapido ?', user_id:User.last.id).save
       response = 'batendo no liquidificador !'
 
       #Execution
