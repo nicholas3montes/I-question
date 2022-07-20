@@ -8,7 +8,8 @@ describe 'CreateQuestionResponseCommand', type: :request do
         gender:'masculino', street:'travessa rio', number:07, city:'Paraiba', country:'Brasil')
       QuestionPost.new(question:'Como fazer um bolo rapido ?', user_id:User.last.id).save
       response = 'batendo no liquidificador !'
-
+      CreateUserCommand.new(name:'tatiana', birthdate:29091978, email:'tati@gmail.com', 
+        gender:'feminino', street:'cuiabana', number:07, city:'Curitiba', country:'Brasil')
       #Execution
       CreateQuestionResponseCommand.new(response: response, question_id: QuestionPost.last.id)
 

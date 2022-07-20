@@ -8,6 +8,8 @@ describe 'CreateQuestionResponseCommandHandler', type: :request do
         gender:'Masculino', street: 'Clodomiro amazonas', number: 888, city: 'São paulo', country: 'Brasil')
       question = "Como fazer velas de cera de abelha ?"
       questionPost = QuestionPost.new(question: question, user_id: User.last.id).save
+      CreateUserCommandHandler.new.execute(name: 'Carlos', birthdate: 30011880, email:'Carlao@gmail.com',
+        gender:'Masculino', street: 'Brigadeiro recheado', number: 58, city: 'São paulo', country: 'Brasil')
       response = "Olhando o manual, seu burro !"
 
       # Execution
