@@ -1,9 +1,7 @@
 class CreateQuestionResponseCommand
   
-  def initialize(response:, question_id:)
-  
-    if QuestionPost.last.user_id != User.last.id
-      QuestionResponse.new(response: response, question_posts_id: question_id, user_id: User.last.id).save
-    end
+  def execute(response:, question_id:, user_id:)
+    
+    CreateQuestionResponseCommandHandler.new(response: response, question_id: question_id, user_id: user_id).execute
   end
 end

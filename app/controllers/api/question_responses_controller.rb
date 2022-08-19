@@ -1,6 +1,6 @@
 class Api::QuestionResponsesController < Api::ApiController
   def create
-    response = CreateQuestionResponseCommandHandler.new.execute(response:params[:response], question_id:params[:question_posts_id])
+    response = CreateQuestionResponseCommandHandler.new(response:params[:response], question_id:params[:question_posts_id], user_id:params[:user_id]).execute
     render status: 201, json: response
   end
 
